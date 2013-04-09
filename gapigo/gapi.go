@@ -32,22 +32,6 @@ type ApiRequest struct {
    Timestamp time.Time
 }
 
-func main() {
-    // Ideal API?
-    // r := Query("/tours/21346")
-    // status, err := r.Fetch()
-    // log.Println(r.RawText)
-    var req = ApiRequest{
-        Url: "/tours/21346/",
-    }
-
-    status, err := req.Fetch()
-
-    log.Println(req.RawText)
-    log.Println(status, err)
-    return
-}
-
 // Initializes the Request, but doesnt process it yet. As it can be added onto
 func (r *ApiRequest) buildRequest() {
      reqUri :=  strings.Join([]string{ApiRoot, r.Url}, "")
